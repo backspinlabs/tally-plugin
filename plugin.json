@@ -96,7 +96,6 @@
             }
           ]
         },
-        "demo_recording_url": "TODO",
         "commerce": false,
         "commerce_description": "Tally does not sell products or take payments in ChatGPT."
       },

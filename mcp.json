@@ -3,7 +3,17 @@
   "mcpServers": {
     "tally": {
       "type": "streamable-http",
-      "url": "https://tally.backspinlabs.com/mcp"
+      "url": "https://tally.backspinlabs.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            }
+          }
+        }
+      }
     }
   }
 }

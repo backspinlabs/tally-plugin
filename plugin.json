@@ -25,7 +25,7 @@
         "shortDescription": "Ask your Lightspeed shop data",
         "longDescription": "Tally answers questions about a shop's Lightspeed Retail (R-Series) data: sales, stock, service, customers, and the team. Ask how yesterday went, what stock to clear, which jobs are waiting on parts, or how the month is pacing, and get the answer from a copy of the shop's data that refreshes every few minutes. For shops already connected to Tally; the shop owner decides what each person can see. Tally reads the shop's data, and changes in Lightspeed stay off unless the owner turns them on.",
         "developerName": "Backspin Labs",
-        "category": "Business",
+        "category": "Productivity",
         "capabilities": [
           "Sales and margin by store",
           "Stock, reorders, and slow movers",

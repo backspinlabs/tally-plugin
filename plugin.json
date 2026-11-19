@@ -41,7 +41,7 @@
           "What stock should we clear?",
           "Which jobs are waiting on parts?"
         ],
-        "brandColor": "#C2410C",
+        "brandColor": "#111111",
         "brandColorDark": "#FF5A1F",
         "composerIcon": "./assets/icon.png",
         "logo": "./assets/icon.png"

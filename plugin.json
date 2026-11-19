@@ -1,0 +1,112 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "backspin-tally",
+  "version": "1.0.0",
+  "description": "Ask your Lightspeed Retail (R-Series) shop questions in plain English: sales, stock, service, and customers.",
+  "author": {
+    "name": "Backspin Labs, LLC",
+    "email": "support@backspinlabs.com",
+    "url": "https://backspinlabs.com"
+  },
+  "homepage": "https://tally.backspinlabs.com",
+  "repository": "https://github.com/backspinlabs/tally-plugin",
+  "license": "MIT",
+  "keywords": [
+    "lightspeed",
+    "retail",
+    "inventory",
+    "point of sale",
+    "bike shop"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Tally",
+        "shortDescription": "Ask your Lightspeed shop data",
+        "longDescription": "Tally answers questions about a shop's Lightspeed Retail (R-Series) data: sales, stock, service, customers, and the team. Ask how yesterday went, what stock to clear, which jobs are waiting on parts, or how the month is pacing, and get the answer from a copy of the shop's data that refreshes every few minutes. For shops already connected to Tally; the shop owner decides what each person can see. Tally reads the shop's data, and changes in Lightspeed stay off unless the owner turns them on.",
+        "developerName": "Backspin Labs",
+        "category": "Business",
+        "capabilities": [
+          "Sales and margin by store",
+          "Stock, reorders, and slow movers",
+          "Service queue and parts",
+          "End-of-day payments"
+        ],
+        "websiteURL": "https://tally.backspinlabs.com",
+        "supportURL": "https://tally.backspinlabs.com/docs",
+        "privacyPolicyURL": "https://tally.backspinlabs.com/privacy",
+        "termsOfServiceURL": "https://tally.backspinlabs.com/terms",
+        "defaultPrompt": [
+          "How did we do yesterday?",
+          "What stock should we clear?",
+          "Which jobs are waiting on parts?"
+        ],
+        "brandColor": "#C2410C",
+        "brandColorDark": "#FF5A1F",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Morning check",
+              "prompt": "How's the shop doing this morning?",
+              "tools_triggered": "daily_brief",
+              "expected_behavior": "One daily brief for Demo Cycle Co.: what needs attention today, yesterday's net sales per store against last week and last year, the month to date, and when the data last synced."
+            },
+            {
+              "description": "Yesterday by store",
+              "prompt": "How did we do yesterday at each store?",
+              "tools_triggered": "store_scorecard",
+              "expected_behavior": "Yesterday's net sales, transactions, and average ticket per store, compared with before, with the main reasons for any change."
+            },
+            {
+              "description": "Find an item",
+              "prompt": "Do we have any helmets in stock, and what do they cost?",
+              "tools_triggered": "search_items",
+              "expected_behavior": "A short list of helmets with price and quantity on hand per store."
+            },
+            {
+              "description": "Slow stock",
+              "prompt": "What stock should we clear?",
+              "tools_triggered": "slow_movers, stock_age",
+              "expected_behavior": "Brands and items with no sale in 180 days, largest value first, and the oldest stock on hand by store."
+            },
+            {
+              "description": "Service queue",
+              "prompt": "Which repair jobs are waiting on parts?",
+              "tools_triggered": "waiting_on_parts",
+              "expected_behavior": "Open work orders waiting on parts, with whether each part is in stock here, at another store, or nowhere."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Changes are off for this account",
+              "prompt": "Change the price of the first helmet to $5."
+            },
+            {
+              "description": "Card numbers are not stored or shown",
+              "prompt": "Show me the credit card number the last customer paid with."
+            },
+            {
+              "description": "Unrelated to the shop's data",
+              "prompt": "What's the weather in Dallas tomorrow?"
+            }
+          ]
+        },
+        "demo_recording_url": "TODO",
+        "commerce": false,
+        "commerce_description": "Tally does not sell products or take payments in ChatGPT."
+      },
+      "publication": {
+        "countries": [
+          "US",
+          "CA"
+        ],
+        "release_notes": "First release: Tally's connector, plus routines for the morning check, month so far, stock to clear, the service desk, and end of day."
+      }
+    }
+  }
+}

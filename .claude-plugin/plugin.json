@@ -1,0 +1,22 @@
+{
+  "name": "backspin-tally",
+  "displayName": "Tally",
+  "version": "1.0.0",
+  "description": "Ask your Lightspeed Retail (R-Series) shop questions in plain English: sales, stock, service, and customers. Adds Tally's connector and ready-made routines for the morning check, month so far, stock to clear, the service desk, and end of day.",
+  "author": {
+    "name": "Backspin Labs, LLC",
+    "email": "support@backspinlabs.com",
+    "url": "https://backspinlabs.com"
+  },
+  "homepage": "https://tally.backspinlabs.com",
+  "repository": "https://github.com/backspinlabs/tally-plugin",
+  "license": "MIT",
+  "keywords": [
+    "lightspeed",
+    "retail",
+    "point of sale",
+    "inventory",
+    "bike shop"
+  ],
+  "privacyPolicyUrl": "https://tally.backspinlabs.com/privacy"
+}

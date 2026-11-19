@@ -18,5 +18,8 @@
     "inventory",
     "bike shop"
   ],
-  "privacyPolicyUrl": "https://tally.backspinlabs.com/privacy"
+  "privacyPolicyUrl": "https://tally.backspinlabs.com/privacy",
+  "supportUrl": "https://tally.backspinlabs.com/docs",
+  "documentationUrl": "https://tally.backspinlabs.com/docs",
+  "termsOfServiceUrl": "https://tally.backspinlabs.com/terms"
 }

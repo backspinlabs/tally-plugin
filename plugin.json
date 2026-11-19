@@ -51,40 +51,40 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Morning check",
-              "prompt": "How's the shop doing this morning?",
-              "tools_triggered": "daily_brief",
-              "expected_behavior": "One daily brief for Demo Cycle Co.: what needs attention today, yesterday's net sales per store against last week and last year, the month to date, and when the data last synced."
-            },
-            {
-              "description": "Yesterday by store",
-              "prompt": "How did we do yesterday at each store?",
+              "description": "Why a store's sales fell",
+              "prompt": "Why were Northgate's sales down last week?",
               "tools_triggered": "store_scorecard",
-              "expected_behavior": "Yesterday's net sales, transactions, and average ticket per store, compared with before, with the main reasons for any change."
+              "expected_behavior": "Northgate's net sales last week against the week before, the categories and items behind the drop (such as fewer electric bikes sold), and the merchandise margin."
             },
             {
-              "description": "Find an item",
-              "prompt": "Do we have any helmets in stock, and what do they cost?",
-              "tools_triggered": "search_items",
-              "expected_behavior": "A short list of helmets with price and quantity on hand per store."
-            },
-            {
-              "description": "Slow stock",
-              "prompt": "What stock should we clear?",
-              "tools_triggered": "slow_movers, stock_age",
-              "expected_behavior": "Brands and items with no sale in 180 days, largest value first, and the oldest stock on hand by store."
-            },
-            {
-              "description": "Service queue",
-              "prompt": "Which repair jobs are waiting on parts?",
+              "description": "Jobs waiting on parts",
+              "prompt": "Which jobs are stuck waiting on parts?",
               "tools_triggered": "waiting_on_parts",
-              "expected_behavior": "Open work orders waiting on parts, with whether each part is in stock here, at another store, or nowhere."
+              "expected_behavior": "Open work orders waiting on parts, with whether each part is in stock at this store, at another store, or nowhere."
+            },
+            {
+              "description": "Stock to move between stores",
+              "prompt": "What should we move between stores?",
+              "tools_triggered": "transfer_suggestions",
+              "expected_behavior": "Items one store is sitting on that another store is selling, with suggested quantities. Nothing is moved; it is a list for the shop to act on."
+            },
+            {
+              "description": "Vendor prices",
+              "prompt": "Are we paying too much for anything we buy a lot of?",
+              "tools_triggered": "vendor_price_compare",
+              "expected_behavior": "High-volume items where another vendor lists a lower cost, with the possible savings per year."
+            },
+            {
+              "description": "Money in old stock",
+              "prompt": "Where is money tied up in old stock?",
+              "tools_triggered": "slow_movers, stock_age",
+              "expected_behavior": "Stock with no sale in 180 days, by brand and item, largest value first, with the total."
             }
           ],
           "negative": [
             {
-              "description": "Changes are off for this account",
-              "prompt": "Change the price of the first helmet to $5."
+              "description": "Deleting items is not possible through Tally",
+              "prompt": "Delete every item from the Pedals category in Lightspeed."
             },
             {
               "description": "Card numbers are not stored or shown",
@@ -96,6 +96,7 @@
             }
           ]
         },
+        "demo_recording_url": "https://backspinlabs.com/media/tally-chatgpt-demo.mp4",
         "commerce": false,
         "commerce_description": "Tally does not sell products or take payments in ChatGPT."
       },
